@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель менеджера - Florencee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<div class="container mt-4">
+    <h1>🌹 Панель менеджера</h1>
+    <p class="text-muted">Управление товарами и заказами</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Ожидающие заказы</h5>
+                    <h2 th:text="${pendingOrdersCount}"></h2>
+                    <a href="/manager/orders" class="btn btn-primary">Просмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Всего заказов</h5>
+                    <h2 th:text="${totalOrders}"></h2>
+                    <a href="/manager/orders" class="btn btn-primary">Просмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Товаров в каталоге</h5>
+                    <h2 th:text="${totalFlowers}"></h2>
+                    <a href="/manager/flowers" class="btn btn-primary">Управление</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4">
+        <h3>Быстрые действия</h3>
+        <a href="/manager/flowers" class="btn btn-success me-2">Управление цветами</a>
+        <a href="/manager/categories" class="btn btn-success me-2">Управление категориями</a>
+        <a href="/manager/orders" class="btn btn-success">Управление заказами</a>
+    </div>
+</div>
+</body>
+</html>

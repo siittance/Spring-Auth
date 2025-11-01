@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора - Florencee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div th:insert="blocks/header"></div>
+<div class="container mt-4">
+    <h1>🌹 Панель администратора</h1>
+    <p class="text-muted">Управление магазином цветов Florencee</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Покупатели</h5>
+                    <h2 th:text="${customersCount}"></h2>
+                    <a href="/admin/customers" class="btn btn-primary">Управление</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Категории</h5>
+                    <h2 th:text="${categoriesCount}"></h2>
+                    <a href="/admin/categories" class="btn btn-primary">Управление</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Цветы</h5>
+                    <h2 th:text="${flowersCount}"></h2>
+                    <a href="/manager/flowers" class="btn btn-primary">Управление</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Поставщики</h5>
+                    <h2 th:text="${suppliersCount}"></h2>
+                    <a href="/admin/suppliers" class="btn btn-primary">Управление</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
